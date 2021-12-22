@@ -1,1 +1,3 @@
-crud-node-mongo
+### Environment variables
+MONGODB_URI
+PORT
