@@ -1,4 +1,4 @@
-<table>
+<table class="table table-bordered table-hover table-dark">
     <thead>
         <tr>
             <th> N </th>
@@ -8,22 +8,28 @@
         </tr>
     </thead>
     <tbody>
-        {{#each tasks}}
-        <tr>
-            <td> {{@index}} </td>
-            <td>{{ title }}</td>
-            <td>{{description}}</td>
-            <td>
-                {{#if done}}
-                    <a href="/toggle-done/{{_id}}"> Undone </a>
-                {{else}}
-                    <a href="/toggle-done/{{_id}}"> Done </a>
-                {{/if}}
-                <a href="/delete/{{_id}}"> Delete </a>
-                <a href="/edit/{{_id}}"> Edit </a>
-            </td>
-        </tr>
-        {{/each}}
+        {{#if tasks}}
+            {{#each tasks}}
+            <tr>
+                <td> {{@index}} </td>
+                <td>{{ title }}</td>
+                <td>{{description}}</td>
+                <td>
+                    {{#if done}}
+                        <a href="/toggle-done/{{_id}}" class="btn btn-dark"> Undone </a>
+                    {{else}}
+                        <a href="/toggle-done/{{_id}}" class="btn btn-success"> Done </a>
+                    {{/if}}
+                    <a href="/delete/{{_id}}" class="btn btn-danger"> Delete </a>
+                    <a href="/edit/{{_id}}" class="btn btn-info"> Edit </a>
+                </td>
+            </tr>
+            {{/each}}
+        {{else}}
+            <tr>
+                <td colspan="4" class="text-center"> No tasks </td>
+            </tr>
+        {{/if}}
     </tbody>
 </table>
 
