@@ -1,5 +1,12 @@
-import { Router } from 'express';
-import { renderTasks, addTasks, getTaskById, editTaskById, deleteTaskById, taskToggleDone } from "../controllers/tasks.controller";
+import { Router } from "express";
+import {
+  renderTasks,
+  addTasks,
+  getTaskById,
+  editTaskById,
+  deleteTaskById,
+  taskToggleDone,
+} from "../controllers/tasks.controller";
 
 const router = Router();
 
@@ -8,7 +15,7 @@ router.get("/", renderTasks);
 router.post("/tasks/add", addTasks);
 
 router.get("/about", (req, res) => {
-    res.render("about");
+  res.render("about");
 });
 
 router.get("/edit/:id", getTaskById);

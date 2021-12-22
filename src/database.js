@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
+import {MONGODB_URI} from './config';
 
-const db = mongoose.connect("mongodb://localhost/crud-mongo", {
+const db = mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
