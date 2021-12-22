@@ -1,7 +1,7 @@
-<form action="/edit/{{task._id}}" method="POST">
+<form action="tasks/add" method="POST">
   <div>
     <label for="title" placeholder="title"> Write a Title </label>
-    <input type="text" name="title" id="title" placeholder="Title" value="{{task.title}}" />
+    <input type="text" name="title" id="title" placeholder="Title" />
   </div>
 
   <div>
@@ -14,7 +14,7 @@
       cols="30"
       rows="10"
       placeholder="Description"
-    > {{task.description}} </textarea>
-    <button>Edit</button>
+    ></textarea>
+    <button>Add</button>
   </div>
 </form>
